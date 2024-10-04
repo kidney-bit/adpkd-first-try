@@ -3,29 +3,13 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.linear_model import LinearRegression
-import os
 
 st.set_page_config(layout="wide")
 
-# CSS Customizado com fontes em Negrito (26px e 32px)
-st.markdown("""
-    <style>
-    html, body, [class*="css"]  {
-        font-weight: bold;
-    }
-    .font-26 {
-        font-size: 26px;
-        font-weight: bold;
-    }
-    .font-32 {
-        font-size: 32px;
-        font-weight: bold;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+# Use um caminho relativo para o arquivo CSV
+file_path = "lc01_corrigido.csv"
 
-# Carregando os dados corrigidos
-file_path = "/Users/karolinewayla/mu_code/datasets/lc01_corrigido.csv"
+# Carregando os dados corrigidos a partir do caminho relativo
 df_reviews = pd.read_csv(file_path)
 
 # Convertendo 'segunda_osm' para numérico, tratando valores inválidos como NaN
